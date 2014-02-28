@@ -76,6 +76,8 @@ header
     text-align: center
     min-height: 100px
     +transition(all .2s)
+    @include placeholder
+      color: darken($main, 15%)
     width: 100%
     +box-sizing(border-box)
     &:focus
@@ -84,6 +86,10 @@ header
   a
     +button
 
-  .output
-    border: 1px #fff dashed
-    padding: 0 5px 0 5px
+footer
+  text-align: center
+  color: transparentize(#fff, .3)
+  font-size: 14px
+  padding: 0 0 40px 0
+  a
+    color: #fff
