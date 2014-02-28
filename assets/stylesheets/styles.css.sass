@@ -2,6 +2,25 @@
 
 $main: #5C50AB
 
+= button
+  position: relative
+  background: saturate($main + #111, 5%)
+  padding: 10px 30px
+  margin: 0 auto
+  display: block
+  max-width: 300px
+  text-align: center
+  text-decoration: none
+  color: #fff
+  -webkit-transition: background-color .2s
+  font-size: 22px
+  cursor: pointer
+  &:hover
+    background: saturate($main + #191919, 10%)
+  +mobile
+    padding: 10px
+    font-size: 20px
+
 body
   background: $main
   font-family: Cabin, sans-serif
@@ -46,37 +65,25 @@ header
 
 .flip_it
   input[type=text]
-    +box-shadow(0 0 5px 3px hsla(0, 0%, 0%, 0.65))
+    +box-shadow(inset 0 0 20px 0 transparentize(#000, .8))
+    border: 0
     background: darken($main, 10%)
     color: lighten($main, 30%)
     padding: 15px
-    margin: 10px 0 10px 0
+    margin: 10px 0 30px 0
     font-size: 50px
-    min-width: 740px
     line-height: 160%
     text-align: center
     min-height: 100px
+    +transition(all .2s)
+    width: 100%
+    +box-sizing(border-box)
+    &:focus
+      outline: none
+      background: darken($main, 5%)
   a
     +button
 
   .output
     border: 1px #fff dashed
     padding: 0 5px 0 5px
-
-= button
-  position: relative
-  background: saturate($main + #111, 5%)
-  padding: 10px 30px
-  margin: 0 auto
-  display: block
-  max-width: 150px
-  text-align: center
-  text-decoration: none
-  color: #fff
-  -webkit-transition: background-color .2s
-  font-size: 22px
-  &:hover
-    background: saturate($main + #191919, 10%)
-  +mobile
-    padding: 10px
-    font-size: 20px
