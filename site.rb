@@ -1,8 +1,9 @@
 require 'bundler/setup'
-Bundler.require(:default)
+Bundler.require(:default, :assets)
 
 require_relative 'lib/wah_wah'
 require_relative 'lib/flipper'
+
 require 'sinatra/asset_pipeline'
 require 'sinatra/base'
 
