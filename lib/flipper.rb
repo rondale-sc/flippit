@@ -105,8 +105,7 @@ module Flipper
   private
 
   def wah_wah
-    face = WahWah[rand(WahWah.length)]
-    "#{face} <----( You used a character that isn't allowed. Try again.)"
+    WahWah[rand(WahWah.length)]
   end
 
   def flip_char(char)

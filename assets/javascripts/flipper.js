@@ -12,8 +12,7 @@ var App = App || {};
       method: "POST",
       data: data,
       success: function(response){
-	$('.flip_it .output').html(response.output)
-	$('.flip_it input').val("").focus();
+	$('.flip_it input').val(response.output).select();
       }
     });
   }
@@ -28,4 +27,5 @@ var App = App || {};
 
 $(function(){
   new App.Flipper();
+  $('input').focus();
 });

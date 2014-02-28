@@ -4,12 +4,16 @@ Bundler.require(:default, :assets)
 require_relative 'lib/wah_wah'
 require_relative 'lib/flipper'
 
-require 'sinatra/asset_pipeline'
 require 'sinatra/base'
+require 'sinatra/asset_pipeline'
 
 
 class Flippit < Sinatra::Base
+  set :assets_css_compressor, :sass
+  set :assets_js_compressor, :uglifier
+
   register Sinatra::AssetPipeline
+
   include Flipper
 
   get '/' do
