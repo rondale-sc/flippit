@@ -70,4 +70,5 @@ DEPENDENCIES
   sinatra
   sinatra-asset-pipeline
   sinatra-contrib
+  sprockets
   uglifier
