@@ -1,0 +1,82 @@
+@import 'bourbon/bourbon', 'reset', 'cask'
+
+$main: #5C50AB
+
+body
+  background: $main
+  font-family: Cabin, sans-serif
+  color: #fff
+  font-size: 18px
+  line-height: 160%
+  +font-smoothing
+  -webkit-text-size-adjust: none
+  +mobile
+    font-size: 16px
+
+.wrapper
+  max-width: 800px
+  padding: 20px 40px 20px 40px
+  margin: 0 auto
+  +mobile
+    padding: 30px 10px 10px 10px
+
+main
+  max-width: 800px
+  padding: 10px 40px 20px 40px
+  margin: auto
+  +mobile
+    padding: 30px 10px 10px 10px
+
+header
+  text-align: center
+  padding-top: 40px
+  h1, h2
+    font-size: 100px
+    font-weight: normal
+    line-height: 100%
+  h2
+    padding-top: 10px
+    font-size: 20px
+    letter-spacing: 4px
+    text-transform: uppercase
+  +mobile
+    padding: 20px 0
+    h1
+      font-size: 70px
+
+.flip_it
+  input[type=text]
+    +box-shadow(0 0 5px 3px hsla(0, 0%, 0%, 0.65))
+    background: darken($main, 10%)
+    color: lighten($main, 30%)
+    padding: 15px
+    margin: 10px 0 10px 0
+    font-size: 50px
+    min-width: 740px
+    line-height: 160%
+    text-align: center
+    min-height: 100px
+  a
+    +button
+
+  .output
+    border: 1px #fff dashed
+    padding: 0 5px 0 5px
+
+= button
+  position: relative
+  background: saturate($main + #111, 5%)
+  padding: 10px 30px
+  margin: 0 auto
+  display: block
+  max-width: 150px
+  text-align: center
+  text-decoration: none
+  color: #fff
+  -webkit-transition: background-color .2s
+  font-size: 22px
+  &:hover
+    background: saturate($main + #191919, 10%)
+  +mobile
+    padding: 10px
+    font-size: 20px
