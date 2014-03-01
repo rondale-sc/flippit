@@ -32,5 +32,12 @@ describe Flipper do
     it "converts both ways" do
       expect(flipper.flip_it("uosʞɔɐɾ uɐɥʇɐuoɾ")).to eq("jonathan jackson")
     end
+
+    it "prints random smiley when confronted with unknown character" do
+      stub_const('WahWah', [":)", "^_^"])
+
+      result = flipper.flip_it('`')
+      expect(WahWah).to include(result)
+    end
   end
 end

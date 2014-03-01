@@ -105,7 +105,7 @@ module Flipper
   private
 
   def wah_wah
-    WahWah[rand(WahWah.length)]
+    WahWah.sample
   end
 
   def flip_char(char)
