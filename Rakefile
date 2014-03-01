@@ -3,4 +3,7 @@ require 'sinatra/base'
 require 'sinatra/asset_pipeline/task.rb'
 
 Sinatra::AssetPipeline::Task.define! Flippit
-load 'jasmine/tasks/jasmine.rake'
+
+if ENV['RACK_ENV'] == "test" || "development"
+  load 'jasmine/tasks/jasmine.rake'
+end
