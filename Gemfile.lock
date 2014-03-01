@@ -11,9 +11,16 @@ GEM
     haml (4.0.5)
       tilt
     hike (1.2.3)
+    jasmine (2.0.0)
+      jasmine-core (~> 2.0.0)
+      phantomjs
+      rack (>= 1.2.1)
+      rake
+    jasmine-core (2.0.0)
     json (1.8.1)
     method_source (0.8.2)
     multi_json (1.8.4)
+    phantomjs (1.9.7.0)
     pry (0.9.12.4)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -66,11 +73,13 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  jasmine
   pry
+  rake
   redcarpet
   sass
-  sinatra
+  sinatra (~> 1.4.3)
   sinatra-asset-pipeline
-  sinatra-contrib
+  sinatra-contrib (~> 1.4.1)
   sprockets
   uglifier

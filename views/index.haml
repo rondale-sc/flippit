@@ -3,7 +3,6 @@
   %head
     %title Flippit
     %link{"rel" => "stylesheet", "href" => asset_path('styles.css'), "type" => "text/css"}
-    %script{"src" => "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"}
     %script{"src" => asset_path('application.js')}
   %body
     %header
@@ -12,7 +11,8 @@
         %h2 (ノಠ益ಠ)ノ彡┻━┻
     %main
       %div.flip_it
-        %input{type: "text", "placeholder" => "¡ǝɯ dı|ɟ"}
+        %form
+          %input{type: "text", "placeholder" => "¡ǝɯ dı|ɟ"}
         %a It's about flipping time!
     %footer
       :markdown
@@ -20,3 +20,8 @@
         [@camerondaigle](https://twitter.com/camerondaigle) and
         [@rwz](https://twitter.com/rwz). View source
         [here](https://github.com/rondale-sc/flippit)
+
+:javascript
+$(function(){
+  new App.Flipper($('.flip_it'));
+});

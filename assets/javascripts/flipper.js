@@ -1,31 +1,38 @@
 var App = App || {};
 
 (function(namespace){
-  Flipper = function(){
+  Flipper = function($el){
+    this.$el = $el
     this.addListeners();
   }
 
-  function retrieveOutput() {
-    var data = { string: $('.flip_it input').val() }
+  Flipper.prototype.retrieveOutput = function (cb) {
+    var data = { string: this.$el.find('input').val() };
 
     $.ajax("/get_flipped", {
       method: "POST",
       data: data,
-      success: function(response){
-	$('.flip_it input').val(response.output).select();
-      }
+      success: $.proxy(cb, this)
     });
   }
 
+  Flipper.prototype.updateInputValue = function(response){
+    this.$el.find('input').val(response.output).select();
+  }
+
   Flipper.prototype.addListeners = function() {
-    $('body').on('click', '.flip_it a', function(e){ retrieveOutput() });
-    $('body').on('keyup', '.flip_it input', function(e){ if(e.which == 13){ retrieveOutput() } });
+    var that = this;
+
+    $('body').on('submit', function(e) {
+      e.preventDefault();
+      $.proxy(that.retrieveOutput(that.updateInputValue), that);
+    })
+
+    this.$el.find('a').on('click',function(e) {
+      e.preventDefault();
+      that.$el.find('form').submit();
+    })
   }
 
   namespace.Flipper = Flipper;
 }(App));
-
-$(function(){
-  new App.Flipper();
-  $('input').focus();
-});

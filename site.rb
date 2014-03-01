@@ -1,5 +1,5 @@
 require 'bundler/setup'
-Bundler.require(:default, :assets)
+Bundler.require(:default, :assets, ENV.fetch('RACK_ENV', :development).to_sym)
 
 require_relative 'lib/wah_wah'
 require_relative 'lib/flipper'
