@@ -33,6 +33,19 @@ describe Flipper do
       expect(flipper.flip_it("uosʞɔɐɾ uɐɥʇɐuoɾ")).to eq("jonathan jackson")
     end
 
+    it "don't care about it's input to much" do
+      expect(flipper.flip_it(nil)).to eq("")
+      expect(flipper.flip_it({})).to eq("{}")
+      expect(flipper.flip_it([])).to eq("[]")
+    end
+
+    it "rescues from errors when given an input it can't handle." do
+      input = double(to_s: nil)
+      stub_const('WahWah', [":)"])
+
+      expect(flipper.flip_it(input)).to eq(":)")
+    end
+
     it "prints random smiley when confronted with unknown character" do
       stub_const('WahWah', [":)", "^_^"])
 

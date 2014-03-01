@@ -95,10 +95,10 @@ module Flipper
   }
 
   def flip_it(string)
-     string.each_char.reduce("") do |m,char|
+     string.to_s.each_char.reduce("") do |m,char|
        m += flip_char(char)
      end.downcase.reverse
-  rescue CharNotAvailableError
+  rescue CharNotAvailableError, StandardError
     wah_wah
   end
 
