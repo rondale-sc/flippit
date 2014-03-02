@@ -22,7 +22,7 @@ describe Flipper do
     end
 
     it "flips puctuation" do
-      expect(flipper.flip_it("[],'){}?!\<>;")).to eq("؛<>¡¿{}(\"'[]")
+      expect(flipper.flip_it("[],'){}?!\<>;")).to eq("؛<>¡¿{}(,'[]")
     end
 
     it "flips and reverses" do
