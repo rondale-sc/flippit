@@ -95,9 +95,7 @@ module Flipper
   }
 
   def flip_it(string)
-     string.to_s.each_char.reduce("") do |m,char|
-       m += flip_char(char)
-     end.downcase.reverse
+    string.to_s.each_char.map {|c| flip_char(c) }.join.downcase.reverse
   rescue CharNotAvailableError, StandardError
     wah_wah
   end
@@ -109,8 +107,6 @@ module Flipper
   end
 
   def flip_char(char)
-    Fliptable.fetch(char) do
-      Fliptable.invert.fetch(char) { raise CharNotAvailableError}
-    end
+    Fliptable.fetch(char) { Fliptable.invert.fetch(char) { raise CharNotAvailableError} }
   end
 end
