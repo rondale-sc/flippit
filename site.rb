@@ -11,7 +11,7 @@ require 'sinatra/asset_pipeline'
 class Flippit < Sinatra::Base
   set :assets_css_compressor, :sass
   set :assets_js_compressor, :uglifier
-  set :assets_precompile, %w(application.js styles.css *.png *.jpg *.svg *.eot *.ttf *.woff)
+  set :assets_precompile, %w(application.js styles.css *.png *.jpg *.svg *.eot *.ttf *.woff favicon.ico)
 
   register Sinatra::AssetPipeline
 
