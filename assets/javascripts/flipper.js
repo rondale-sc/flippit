@@ -58,7 +58,7 @@ var App = App || {};
     })
 
     this.$el.find('a.share').on('click', function(e) {
-      var input = this.$el.find('input').val()
+      var input = that.$el.find('input').val()
       $(this).attr('href', that.updateShareAnchor(input))
     })
   }
