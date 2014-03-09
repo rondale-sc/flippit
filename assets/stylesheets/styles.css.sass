@@ -7,7 +7,7 @@ $main: #5C50AB
   background: saturate($main + #111, 5%)
   padding: 10px 30px
   margin: 0 auto
-  display: block
+  display: inline
   max-width: 300px
   text-align: center
   text-decoration: none
@@ -83,8 +83,10 @@ header
     &:focus
       outline: none
       background: darken($main, 5%)
-  a
-    +button
+  div
+    text-align: center
+    a
+      +button
 
 footer
   text-align: center

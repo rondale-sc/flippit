@@ -17,6 +17,6 @@ describe("Integration", function(){
     });
 
     $('.flip_it input').val('Foo');
-    $('.flip_it a').trigger('click');
+    $('.flip_it a.flipper').trigger('click');
   });
 });
